@@ -16,6 +16,7 @@ github_username: hotoku
 minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
 url: "https://www.inctore.com"
+logo: /assets/images/logo.png
 
 # Build settings
 markdown: kramdown
@@ -29,6 +30,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
