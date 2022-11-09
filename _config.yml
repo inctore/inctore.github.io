@@ -56,7 +56,7 @@ plugins:
 author:
   name   : "Yasunori Horikoshi"
   avatar : "/assets/images/bio-photo.png"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "データサイエンティスト・データエンジニア・プログラマー。Python/R/C++/TypeScript。"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
