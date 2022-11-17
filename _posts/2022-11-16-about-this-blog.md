@@ -1,15 +1,15 @@
 ---
 title: このブログについて
-last_modified_at: 2016-03-09T16:20:02-05:00
+last_modified_at: 2022-11-18T07:25:17
 categories:
   - blog
 tags:
   - jekyll
 ---
 
-このブログは、jekyllで構築されており、テーマとしてminimal mistakeを採用しています。
-
-このポストに、テーマのカスタマイズ内容を備忘のためにまとめておきます。
+このブログは、jekyllで構築されています。
+テーマとしてminimal mistakeを採用していますが、少し自分好みに変更を加えているので、
+内容を備忘を兼ねてここにまとめておきます。
 
 ## footer
 
