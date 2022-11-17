@@ -8,7 +8,8 @@ tags:
 ---
 
 このブログは、jekyllで構築されています。
-テーマとして[minimal mistake][minimal mistake]を採用していますが、少し自分好みに変更を加えているので、
+テーマとして[minimal mistake](https://mmistakes.github.io/minimal-mistakes/)を採用していますが、少し自分好みに変更を加えているので、
+
 内容を備忘を兼ねてここにまとめておきます。
 
 ## footer
@@ -27,5 +28,3 @@ footerの青い帯が太すぎる気がするので、修正しました。
 ```
 
 を追記しています。上の余白はmarginで下の余白はpaddingで調整するのは、どういう意味なんだろか。
-<!-- link -->
-[minimal mistake]: https://mmistakes.github.io/minimal-mistakes/
