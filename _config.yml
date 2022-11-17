@@ -18,6 +18,8 @@ search: true
 url: "https://www.inctore.com"
 logo: /assets/images/logo.png
 
+masthead_title: " "
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes@4.24.0
