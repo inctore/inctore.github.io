@@ -9,8 +9,7 @@ tags:
 
 このブログは、jekyllで構築されています。
 テーマとして[minimal mistake](https://mmistakes.github.io/minimal-mistakes/)を採用していますが、少し自分好みに変更を加えているので、
-
-内容を備忘を兼ねてここにまとめておきます。
+備忘を兼ねて、内容をここにまとめておきます。
 
 ## footer
 
