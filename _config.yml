@@ -67,8 +67,11 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hotoku"
     - label: "Qiita"
-      icon: "fab fa-link"
+      icon: "fa-fw fa-solid fa-pen-nib"
       url: "https://qiita.com/hotoku"
+    - label: "midium"
+      icon: "fa-fw fa-solid fa-pen-nib"
+      url: "https://medium.com/@hotoku"
 
 footer:
   links:
