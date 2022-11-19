@@ -17,6 +17,7 @@ minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "di
 search: true
 url: "https://www.inctore.com"
 logo: /assets/images/logo.png
+encoding: utf-8
 
 masthead_title: " "
 
@@ -37,14 +38,22 @@ include:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _plsit/
+  - _plist2/
+  - node_modules/
+  - package-lock.json
+  - package.json
+  - tsconfig.json
+  - webpack.config.js
+  - src/
 
 # Plugins (previously gems:)
 plugins:
