@@ -48,12 +48,7 @@ exclude:
   - vendor/ruby/
   - _plsit/
   - _plist2/
-  - node_modules/
-  - package-lock.json
-  - package.json
-  - tsconfig.json
-  - webpack.config.js
-  - src/
+  - js/
 
 # Plugins (previously gems:)
 plugins:
