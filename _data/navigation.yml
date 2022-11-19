@@ -1,6 +1,6 @@
 main:
-  - title: "このサイトについて"
-    url: /about/
+  - title: "プロフィール"
+    url: /profile/
   - title: "Blog"
     url: /posts/
   - title: "お問い合わせ"
