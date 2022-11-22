@@ -9,12 +9,12 @@ tags:
 ---
 
 mermaidという、様々なフォーマットでグラフやネットワークを表現できる言語があります。
-私は、少し前にGitHub上のmarkdownにこれを埋め込めるようになったのをキッカケに使い始めました。
+私は、少し前にGitHubが、markdown上のmermaidを画像に変換して描画するようにになったのをキッカケに使い始めました。
 
-このブログでも使うことになると思うので、設定を仕込んでおこうと思います。
-これは結果を確認するためのテスト用エントリーです。
+このブログでも使うことになると思うので、変換のコードを仕込んでおきます。
+このエントリは、結果の確認用です 👶
 
-<pre style="background-color: #aaa; padding: 0.5em">
+<pre style="background-color: #ddd; padding: 0.5em">
 ``` mermaid
 flowchart TD
   A --> B --> C
