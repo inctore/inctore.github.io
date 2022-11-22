@@ -17,7 +17,7 @@ var myIndex;
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"contactSend\": () => (/* binding */ contactSend)\n/* harmony export */ });\nfunction contactSend(e) {\n    console.log(\"contactSend\", e);\n}\n\n\n//# sourceURL=webpack://myIndex/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"contactSend\": () => (/* binding */ contactSend)\n/* harmony export */ });\nfunction contactSend(e) {\n    console.log(\"contactSend2\", e);\n}\n\n\n//# sourceURL=webpack://myIndex/./src/index.ts?");
 
 /***/ })
 

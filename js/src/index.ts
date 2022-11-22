@@ -1,3 +1,3 @@
 export function contactSend(e: any) {
-  console.log("contactSend", e);
+  console.log("contactSend2", e);
 }
