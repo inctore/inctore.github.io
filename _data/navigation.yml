@@ -4,4 +4,6 @@ main:
   - title: "Blog"
     url: /posts/
   - title: "お問い合わせ"
-    url: /contact/
+    url: https://docs.google.com/forms/d/e/1FAIpQLScRgUE_SNZhxSgkddiMjiU8biXClYXVoD0C85Hc8oTYjKsZSQ/viewform?usp=sf_link
+  - title: 会社概要
+    url: /about/
