@@ -1,5 +1,3 @@
-async function main() {
-  console.log("fuga");
+export function contactSend(e: any) {
+  console.log("contactSend", e);
 }
-
-main();

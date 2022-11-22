@@ -20,6 +20,10 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "assets/js"),
     clean: true,
+    library: {
+      name: "myIndex",
+      type: "var",
+    },
   },
   optimization: {
     splitChunks: { chunks: "all" },

@@ -3,6 +3,7 @@ permalink: /contact/
 title: お問い合わせ
 author_profile: false
 ---
+<button onClick="myIndex.contactSend()">テストボタン</button>
 <form method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLScRgUE_SNZhxSgkddiMjiU8biXClYXVoD0C85Hc8oTYjKsZSQ/formResponse" >
     <label for="name">お名前</label>
     <input id="name" name="entry.93707027" type="text" placeholder="山田 太郎"/>
@@ -10,5 +11,5 @@ author_profile: false
     <input id="mail" name="entry.325718895" type="email" placeholder="name@example.com"/>
     <label for="message" type="text">メッセージ</label>
     <textarea id="message" name="entry.1552478227" type="text" placeholder="お仕事のご依頼、ご相談など"></textarea>
-    <button>送信</button>
+    <button onClick="myIndex.contactSend">送信</button>
 </form>
