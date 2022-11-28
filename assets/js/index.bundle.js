@@ -1,33 +1,7 @@
 var myIndex;
 /******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ 3607:
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("main start");
-        const convertMermaidTag = (yield Promise.all(/* import() */[__webpack_require__.e(890), __webpack_require__.e(476)]).then(__webpack_require__.bind(__webpack_require__, 1903))).default;
-        console.log("imported");
-        convertMermaidTag();
-    });
-}
-main();
-
-
-/***/ })
-
-/******/ 	});
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({});
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -287,12 +261,44 @@ main();
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(3607);
-/******/ 	myIndex = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+;// CONCATENATED MODULE: ./src/mermaid/utils.ts
+function findMermaidNodes() {
+    const codeNodes = document.querySelectorAll("code.language-mermaid");
+    return codeNodes;
+}
+
+;// CONCATENATED MODULE: ./src/index.ts
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+function convertMermaidIfExists() {
+    const codeNodes = findMermaidNodes();
+    if (codeNodes.length === 0) {
+        return;
+    }
+    Promise.all(/* import() */[__webpack_require__.e(890), __webpack_require__.e(954)]).then(__webpack_require__.bind(__webpack_require__, 2463)).then((obj) => {
+        const convertMermaidTag = obj.default;
+        convertMermaidTag(codeNodes);
+    });
+}
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        addEventListener("load", convertMermaidIfExists);
+    });
+}
+main();
+
+myIndex = __webpack_exports__;
 /******/ })()
 ;

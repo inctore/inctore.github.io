@@ -1,12 +1,8 @@
 import mermaid from "mermaid";
 
-function convertMermaidTag() {
+function convertMermaidTag(codeNodes: NodeListOf<HTMLElement>) {
   mermaid.initialize({ startOnLoad: false });
-  console.log("convertMermaidTag");
 
-  const codeNodes = document.querySelectorAll<HTMLElement>(
-    "code.language-mermaid"
-  );
   codeNodes.forEach((codeNode, index) => {
     const pre = codeNode.parentNode; // これがreplaceされるやつ
     const parent = pre.parentNode;

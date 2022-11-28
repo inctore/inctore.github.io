@@ -1,4 +1,4 @@
-(self["webpackChunkmyIndex"] = self["webpackChunkmyIndex"] || []).push([[476],{
+(self["webpackChunkmyIndex"] = self["webpackChunkmyIndex"] || []).push([[954],{
 
 /***/ 1748:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
@@ -30,7 +30,7 @@ webpackContext.id = 1748;
 
 /***/ }),
 
-/***/ 1903:
+/***/ 2463:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -40,10 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7426);
 
-function convertMermaidTag() {
+function convertMermaidTag(codeNodes) {
     mermaid__WEBPACK_IMPORTED_MODULE_0__/* ["default"].initialize */ .Z.initialize({ startOnLoad: false });
-    console.log("convertMermaidTag");
-    const codeNodes = document.querySelectorAll("code.language-mermaid");
     codeNodes.forEach((codeNode, index) => {
         const pre = codeNode.parentNode; // これがreplaceされるやつ
         const parent = pre.parentNode;

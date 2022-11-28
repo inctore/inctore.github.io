@@ -33910,7 +33910,7 @@ module.exports = strictIndexOf;
 
 var asciiSize = __webpack_require__(8983),
     hasUnicode = __webpack_require__(2689),
-    unicodeSize = __webpack_require__(8816);
+    unicodeSize = __webpack_require__(1903);
 
 /**
  * Gets the number of symbols in `string`.
@@ -34051,7 +34051,7 @@ module.exports = trimmedEndIndex;
 
 /***/ }),
 
-/***/ 8816:
+/***/ 1903:
 /***/ ((module) => {
 
 /** Used to compose unicode character classes. */
