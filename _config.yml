@@ -46,8 +46,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - _plsit/
-  - _plist2/
+  - _plist/
   - js/
   - docs/
   - test/

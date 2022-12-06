@@ -1,0 +1,1 @@
+jekyllをOS上のrubyで動かす場合のplist
