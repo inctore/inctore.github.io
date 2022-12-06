@@ -49,6 +49,8 @@ exclude:
   - _plsit/
   - _plist2/
   - js/
+  - docs/
+  - test/
 
 # Plugins (previously gems:)
 plugins:
