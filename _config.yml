@@ -1,22 +1,30 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Note:
+# 1. This file does not automatically reloaded even when `--livereload`.
+# 2. Jekyll has data files feature for frequently updated data
 
-# Theme Settings
-#
-# Review documentation to determine if you should use `theme` or `remote_theme`
-# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site settings
+# These values can be accessed like {{ site.email }} in HTML or Markdown files.
+title: 合同会社inctore
+email:
+locale: ja-JP
+description: >-
+  Homepage of inctore llc.. A company of freelance programmer / data scientist Y. Horikoshi.
+twitter_username: hotoku
+github_username: hotoku
+minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+search: true
+url: "https://www.inctore.com"
+logo: /assets/images/logo.png
+encoding: utf-8
+
+masthead_title: " "
+
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Site Title"
+locale                   : "ja-JP"
+title                    : "合同会社inctore"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
@@ -59,9 +67,6 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
 lunr:
   search_within_pages    : # true, false (default)
 algolia:
