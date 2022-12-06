@@ -23,7 +23,7 @@ masthead_title: " "
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.24.0
+# remote_theme: mmistakes/minimal-mistakes@4.24.0
 
 # Outputting
 permalink: /:categories/:title/
