@@ -15,7 +15,7 @@ tags:
 
 footerの青い帯が太すぎる気がするので、修正しました。
 
-`assets/css/main.scss`
+`_sass/minimal-mistakes/_footer.scss`
 
 ``` css
 .page__footer {
