@@ -50,6 +50,7 @@ exclude:
   - js/
   - docs/
   - test/
+  - README.md
 
 # Plugins (previously gems:)
 plugins:
