@@ -64,7 +64,7 @@ BigQueryを利用したデータ処理には長く携わっており、SQLでク
 - 2005: 東京大学工学部計数工学科数理コース卒業
 - 2000: 千葉県立東葛飾高等学校卒業
 
-[^1]: 修士論文: [Y. Horikoshi and A. Takemura. Implications of contrarian and one-sided strategies for the fair-coin game.]((https://www.sciencedirect.com/science/article/pii/S0304414907002013))  Stochastic Processes and their Applications. Volume 118, Issue 11, November 2008, Pages 2125-2142
+[^1]: 修士論文: Y. Horikoshi and A. Takemura. [Implications of contrarian and one-sided strategies for the fair-coin game.]((https://www.sciencedirect.com/science/article/pii/S0304414907002013))  Stochastic Processes and their Applications. Volume 118, Issue 11, November 2008, Pages 2125-2142
 
 [^2]: メタプログラミングによってBigQueryのスキーマ情報から自動的にクラスを作るパッケージについての解説記事: [Automatically Generate Type information from BigQuery schema](https://medium.com/towardsdev/automatically-generate-type-information-from-bigquery-schema-4beaa53d8d3d)
 
