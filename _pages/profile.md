@@ -46,7 +46,7 @@ HadoopやSparkといった分散処理基盤の上で、レコメンデーショ
 
 Luigi / Airflow / Prefectなどのワークフローエンジンを用いてデータの連携・変換や機械学習エンジンを動かすデータパイプラインを構築するプロジェクトに複数従事しました。
 
-BigQueryを利用したデータ処理には長く携わっており、SQLでクエリを開発する以上の高度な仕事ができます。クエリの依存関係の自動解析[^6]や、JavaScript/TypeScriptを利用して通常のSQLでは記述が不可能な複雑な処理をを行うUDFを実装するなど[^7]。
+BigQueryを利用したデータ処理には長く携わっており、SQLでクエリを開発する以上の高度な仕事ができます。クエリの依存関係の自動解析[^6]や、JavaScript/TypeScriptを利用して通常のSQLでは記述が不可能な複雑な処理をを行うUDFを実装するなど[^7]、計算機科学・プログラミングの技術を活かして生産性高くデータ基盤を開発することができます。
 
 ### その他
 
@@ -56,7 +56,7 @@ BigQueryを利用したデータ処理には長く携わっており、SQLでク
 ## 職歴
 - 2021 - 2022: [株式会社JDSC](https://jdsc.ai/)
 - 2019 - 2021: [株式会社Datawise](https://www.datawise.co.jp/)
-- 2013 - 2019: [株式会社リクルートテクノロジーズ](https://www.recruit.co.jp/) 現在は組織再編により株式会社リクルート
+- 2013 - 2019: [株式会社リクルートテクノロジーズ](https://www.recruit.co.jp/) <span style="font-size: 0.8rem">※ 現在は組織再編により株式会社リクルート</span>
 - 2007 - 2013: [株式会社みずほ証券](https://www.mizuho-sc.com/index.html)
 
 ## 学歴
@@ -64,7 +64,7 @@ BigQueryを利用したデータ処理には長く携わっており、SQLでク
 - 2005: 東京大学工学部計数工学科数理コース卒業
 - 2000: 千葉県立東葛飾高等学校卒業
 
-[^1]: 修士論文: [Y. Horikoshi and A. Takemura. Implications of contrarian and one-sided strategies for the fair-coin game.]((https://www.sciencedirect.com/science/article/pii/S0304414907002013))  Stochastic Processes and their Applications. Volume 118, Issue 11, November 2008, Pages 2125-2142
+[^1]: 修士論文: Y. Horikoshi and A. Takemura. [Implications of contrarian and one-sided strategies for the fair-coin game.]((https://www.sciencedirect.com/science/article/pii/S0304414907002013))  Stochastic Processes and their Applications. Volume 118, Issue 11, November 2008, Pages 2125-2142
 
 [^2]: メタプログラミングによってBigQueryのスキーマ情報から自動的にクラスを作るパッケージについての解説記事: [Automatically Generate Type information from BigQuery schema](https://medium.com/towardsdev/automatically-generate-type-information-from-bigquery-schema-4beaa53d8d3d)
 
