@@ -17,6 +17,8 @@ Flaskでは、flask.testingという単体テスト用のモジュールが提�
 例
 
 ```python
+from some_package import server
+
 app = server.app
 app.config.update({
     "TESTING": True
@@ -47,9 +49,11 @@ fixtureは、テストファイルの中に書いても良いが、複数のフ�
 ```python
 import pytest
 
+from some_package import server
+
 @pytest.fixture
 def app():
-    app = server.app # serverというモジュールの中にappオブジェクトがいると想定
+    app = server.app
     app.config.update({
         "TESTING": True
     })
