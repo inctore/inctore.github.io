@@ -8,6 +8,10 @@ tags: python prefect
 
 Python製のワークフローエンジン[prefect](https://www.prefect.io/)の基本的な使い方をメモする。
 
+## インストール
+
+`pip install prefect`だと最小限のモジュールしか入らないので、以下で参照している`DaskTaskRunner`を使う場合には`prefect-dask`も追加する。
+
 ## 最小限のサンプルコード
 
 ``` python
