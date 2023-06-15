@@ -15,8 +15,37 @@ tags: linux
 ## nginx confファイルの書き方覚え書き
 - 場所: /etc/nginx/nginx.confが本体
   - sites-availableとsites-enabledディレクトリが横にある
-  - デフォルトのnginx.confでは、`sites-enabled/*.conf`をincludeしている
-  - `sites-available`に、サーバーごとに
+  - デフォルトのnginx.confでは、`sites-enabled/*`をincludeしている
+  - `sites-available`に、サーバーごとにファイルを分けて設定を書いておいて、必要なものだけシンボリックリンクを`sites-enabled`の下に貼る
+  - デフォルトでは、`sites-enabled/default`が配置され、`sites-available/default`が、それを参照するようになっている
+    - これはサンプルなので、しんぼりっくりんくを消す
+    - 参照先のファイルは、設定に関する説明がコメントされているので、取っておけばよい
+  - 最低限は、以下くらいを書いて`sites-available/サーバー名`としておいておいて、`sites-enabled`の下にリンクを貼っておく
+
+```
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name kintai.inctore.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+```
+
+ここまでで、ブラウザにアクセスすると、nginxのサンプルページが見えるはず
+
+memo:
+
+↑までやったインスタンス = kintai-prd-10
+こっから設定ファイルをサルベージして、ここまでをpacker化する
+
+## reactアプリを配置
 
 #### EOF
 <!-- link -->
