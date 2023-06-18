@@ -6,6 +6,30 @@ categories:
 tags: linux
 ---
 
+# 作業ログ(サルベージしたもの)
+
+[2023-06-10 07:14:56]
+
+手でインストールしようと思ったけど、イメージを作った方が早そうな気がしてきた
+
+[2023-06-10 07:41:14]
+
+https://cloud.google.com/build/docs/building/build-vm-images-with-packer?hl=ja
+
+```
+gcloud services enable sourcerepo.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable servicemanagement.googleapis.com
+gcloud services enable storage-api.googleapis.com
+```
+
+これの実行が必要だった
+
+[2023-06-10 13:14:00]
+
+gcloud auth application-default login
+を実行して、`GOOGLE_APPLICATION_CREDENTIALS`環境変数を削除
+
 - vm作成: http/httpsサーバーとしてチェック
 - nginxインストール: apt install nginx
 - DNSのAレコードを作成
@@ -163,15 +187,63 @@ server {
 ## mysqlのインストール
 
 - https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+- https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
 
 ```
 sudo apt install mysql-server
-sudo mysql_secure_installation
 ```
 
 [2023-06-13 08:26:36] とりあえずここまで
 
-## リバプロの設定(未済)
+[2023-06-14 05:43:09]
+`sudo mysql_secure_installation`は上手く動かず
+
+ubuntu 22.04だとエラーになるとのこと。上のdigital ocean記事より
+
+sudo mysql → alter userでrootのパスワード設定
+と思ったけど、qiita記事のとおり、`mysql_secure_installation`は不要にしよう
+https://qiita.com/hato_poppo/items/d3c2bb3aa97e09b123c3#mysql-80
+
+[2023-06-14 05:57:43]
+
+ここまでで、必要なインストールは終わっている、かな
+
+[2023-06-14] イメージ作成は、とりあえずここまでで、一回、アプリを動かしてみる
+
+[2023-06-14 08:00:02] DBをダンプからリストアするのはできた
+
+[2023-06-14 08:05:33] .envrcの環境変数を、整理する必要がある
+- 本番用の環境変数
+- 開発用の環境変数
+- リリース作業用の環境変数
+
+[2023-06-14 09:01:03]
+mysqlのテーブル名は、macだと大文字小文字を区別せず、linuxだと区別する、という挙動らしい。罠だ
+
+https://dev.mysql.com/doc/refman/8.0/ja/identifier-case-sensitivity.html
+
+テーブル名は、ファイルシステム上のファイル名に由来するから、とのこと。罠だ
+
+テーブル名を、全部小文字にするmigrationを入れるか or クエリのテーブル名で、ちゃんと大文字小文字を区別する
+
+方針:
+
+1. テーブル名を全部小文字にするmigrationを入れる
+2. 大文字を使っているクエリを小文字に修正する
+   3. テーブルはたかだか3つなので、大した手間ではない
+   3. 利用時にクエリエラーが出たら、すぐに直せる
+
+## タスク
+
+1. [x] nginxを起動して、httpsで接続
+1. [x] アプリサーバーを起動
+1. [ ] nginx or アプリサーバーから静的ファイルを配信
+1. [x] mysqlのテーブル名のmigration
+1. [ ] 環境変数の整理
+   1. 開発用, 本番用, デプロイ用 3種類の環境があり、それぞれに必要な変数と値を整理する
+1. [ ] ドキュメントの整理
+
+## リバースプロキシの設定(未済)
 
 - インスタンスを起動するたびにグローバルIPが変わってしまって面倒
 - リバースプロキシを設定する
