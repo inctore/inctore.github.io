@@ -76,6 +76,6 @@ BigQueryを利用したデータ処理には長く携わっており、SQLでク
 
 [^6]: クエリの依存関係を自動的に決定し、適切な順番で自動実行するコマンド: [bqrun](https://pypi.org/project/bqrun/)
 
-[^7]: BigQueryのUDFをTypeScriptで各方法を解説した記事: [1](https://qiita.com/hotoku/items/73a1cc037ecd588042ec) [2](https://qiita.com/hotoku/items/4d666c704a25ea9850cd) [3](https://qiita.com/hotoku/items/f9754501021bda169b50)
+[^7]: BigQueryのUDFをTypeScriptで書く方法を解説した記事: [1](https://qiita.com/hotoku/items/73a1cc037ecd588042ec) [2](https://qiita.com/hotoku/items/4d666c704a25ea9850cd) [3](https://qiita.com/hotoku/items/f9754501021bda169b50)
 
 [^8]: リクルート時代のインタビュー記事: [リクルートのデータ分析を担う社員が語る、「修羅場に立ち向かった入社したての自分」と「今の自分」 ](https://logmi.jp/business/articles/134751)
