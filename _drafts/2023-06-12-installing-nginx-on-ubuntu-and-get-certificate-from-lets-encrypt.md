@@ -1,10 +1,57 @@
 ---
-title: ubuntuにnginxを入れてLet's encryptの証明書を取得する
+title: GCEでシンプルなWEBアプリケーションをホストする
 last_modified_at: 2023-06-12T05:36:09
 categories:
   - blog
 tags: linux
 ---
+
+## 構成
+
+- OS: ubuntu
+- webサーバー: nginx
+- DB: mysql
+- アプリサーバー: express
+- フロントエンド: react
+
+というような、いわゆるWEBアプリケーションを、自社用に1から構成したので、手順をメモしておく。
+
+## nginx, mysqlのインストール
+
+- `apt install nginx mysql`だけ
+
+## ファイアウォールの設定
+
+`ufw`を使う。
+
+### `ufw`とは
+
+[公式ページ][ufw]
+
+伝統的には、`netfilter`とういのがLinuxのパケットフィルタの仕組みで、そのフロントエンドとして、`iptables`という
+CLIが利用されていた。が、これを使いこなすのは、なかなかに骨が折れる。そこで、様々な設定用便利コマンド群というのが
+できてきて、`ufw`は、その中の1つ。Uncomplicated Firewallの略らしい。
+
+### 設定内容
+
+1. http, httpsを許可: WEBアプリをホストしたいので当然
+1. sshを許可: これがないとサーバーの操作ができない
+
+あとは、基本、拒否でOK。
+
+### 設定方法
+
+最低限は、以下をやればOK
+
+```shell
+ufw default deny incoming # 内向きの接続を、まずは全部不許可
+ufw default allow outgoing # 外向きは、全部許可
+ufw allow ssh # sshを許可
+ufw allow 'Nginx Full' # http, httpsを許可. これは、nginxのインストール後に実行する必要(たぶん)
+ufw enable
+```
+
+# 以下メモ
 
 # 作業ログ(サルベージしたもの)
 
@@ -272,3 +319,4 @@ memo:
 <!-- link -->
 [lets encrypt]: https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
 [nginx conf]: https://blog.mothule.com/web/nginx/web-nginx-getting-started-step2-on-mac#%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89nginxconf%E3%82%92%E6%9B%B8%E3%81%84%E3%81%A6http%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%BE%E3%81%99
+[ufw]: https://wiki.ubuntu.com/UncomplicatedFirewall
