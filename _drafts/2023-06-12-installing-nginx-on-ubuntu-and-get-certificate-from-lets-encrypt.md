@@ -320,8 +320,85 @@ memo:
 [2023-06-20 07:04:00] reactの配置・ビルドは正しく動いたが、nginxからの配信が失敗している
 rootディレクティブをreactのビルド先に指定すると、404エラーという状態。
 
+## nginxの設定の調整
+
+- [x] httpで/var/www/htmlにアクセス
+- [ ] httpで/home/hotoku/...にアクセス
+- [ ] httpsで/home/hotoku/...にアクセス
+- [ ] basic認証を入れる
+
+### 作業記録
+
+- kintai-prd-2 作成. e2-small
+- releaseフォルダを削除
+  - Makefileとbackupフォルダをサルベージ
+- hotokuユーザーの環境を設定するスクリプトを作成→コミット
+- e2-smallだと、さすがにビルドが遅い
+
+## [2023-06-21] 作業記録
+
+- [x] httpで/var/www/htmlにアクセス
+- [x] 静的ファイルを/var/www/kintaiにデプロイ
+- [x] kintai.inctore.comのconfのrootディレクティブを変更
+- [x] httpで/var/www/kintaiにアクセス
+- [x] DNSの設定
+- [x] APIサーバーの立ち上げ
+- [x] APIへの接続: location /api, /graphqlを追加
+- [x] 空のDBを作成: server/dbでmake
+- [x] DBとの動作確認
+- [x] SSL証明書をインストール: certbotにお任せ, http, https + ドメインでアクセスできる必要がある
+- [x] httpsで/home/hotoku/...にアクセス
+- [ ] basic認証を入れる
+- [ ] データの投入
+
+- kintai-prd-7 作成. e2-medium
+- node/binへのpathの設定:
+- prd.envrcの読み込み: これってdirenvにできないんだっけかね
+- npm i
+- npm run build
+- /etc/nginx/sites-available/kintai.inctore.com rootの書き換え
+- nginxリスタート: sudo systemctl restart nginx.service
+- 404 not found. ぐぬぬ
+
+[2023-06-21 10:16:39]
+
+httpsで静的ファイル・APIとも、正しくアクセスできるようになった。しかし、ReactのLinkの実装に不備があるらしく、ブラウザ内で遷移してほしいリンクをサーバーに問い合わせに行き404になっている
+
+### 静的ファイルの配信ができなかった原因解明
+- nginxは、workerプロセスをwww-dataユーザーで起動している
+- /home/hotokuが、otherに対してパミがない
+- ので、がいとうかしょのファイルが見えない
+
+確認方法
+
+起動ユーザーの場所 = /etc/nginx/nginx.confの`user`
+
+```
+$ sudo su -l www-data -s /bin/bash # www-dataになる
+$ ls /home/hotoku # => permission denied
+```
+
+### 対処
+
+- `/var/www/kintai`を作成
+- その下に、静的なファイルを配置
+
+```
+$ sudo su -
+$ mkdir /var/www/kintai
+$ chmod o+w $_
+$ exit # hotokuに戻る
+$ cd ~/projects/kintai/client
+$ cp -r build/* /var/www/kintai/
+```
+
+## 節約方針のメモ
+
+- [cloud function][clfn]使って、必要なときにCFをキックして、キックされると同時にcloud sqlインスタンス停止を登録しとくような仕組みを作っておけば、インスタンス料金を節約できるかな
+
 #### EOF
 <!-- link -->
 [lets encrypt]: https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
 [nginx conf]: https://blog.mothule.com/web/nginx/web-nginx-getting-started-step2-on-mac#%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89nginxconf%E3%82%92%E6%9B%B8%E3%81%84%E3%81%A6http%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%BE%E3%81%99
 [ufw]: https://wiki.ubuntu.com/UncomplicatedFirewall
+[clfn]: https://cloud.google.com/blog/ja/topics/developers-practitioners/lower-development-costs-schedule-cloud-sql-instances-start-and-stop
