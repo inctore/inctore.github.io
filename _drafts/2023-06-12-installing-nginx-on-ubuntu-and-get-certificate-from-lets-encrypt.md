@@ -396,6 +396,80 @@ $ cp -r build/* /var/www/kintai/
 
 - [cloud function][clfn]使って、必要なときにCFをキックして、キックされると同時にcloud sqlインスタンス停止を登録しとくような仕組みを作っておけば、インスタンス料金を節約できるかな
 
+## 手順書
+
+- [x] nginx, mysqlのインストール
+- [x] ufwの設定
+- [x] DNSの設定
+- [x] ブラウザで、http://kintai.inctore.com にアクセス → nginxのwelcomeが見える
+- [x] アプリのレポジトリをclone
+- [x] clientのビルド
+- [x] /var/www/kintai作成 → パミ変更
+- [x] clientの生成物をデプロイ
+- [x] /etc/nginx/sites-available/kintai.inctore.com作成 → sites-enabledにリンクを張る, rootを/var/www/kintaiに設定
+- [x] nginx再起動
+- [x] ブラウザで、http://kintai.inctore.com にアクセス → アプリの空の画面が見える
+- [x] SSL証明書をインストール: certbotにお任せ
+- [x] ブラウザで、https://kintai.inctore.com にアクセス → アプリの空の画面が見える
+- [x] basic認証を入れる
+- [x] ブラウザで、https://kintai.inctore.com にアクセス → 認証を求められる
+- [x] mysqlのDB/ユーザー作成
+- [x] 旧サーバーからDBのダンプ: sudo mysqldump -u root `DATABASE_NAME` > dumpfile
+- [x] DBデータのリストア: sudo mysql -uroot `DATABASE_NAME` < dumpfile
+- [x] serverビルド
+- [x] アプリサーバーstart
+- [x] /etc/nginx/sites-available/kintai.inctore.com編集 → location /api, /graphqlを追加. basic認証も追加
+- [x] ブラウザで、https://kintai.inctore.com にアクセス → データが見える
+
+ここまでで、動作はした
+
+## todo
+
+- アプリサーバーをデーモン化
+
+## memo
+
+DNSキャッシュのクリア = sudo killall -HUP mDNSResponder
+
+`kintai_prd`パスワード変更
+
+1. #を消去
+
+## basic認証の導入
+
+$ sudo apt-get install apache2-utils
+$ sudo htpasswd -c /etc/nginx/.htpasswd username
+
+```
+    location / {
+        auth_basic "Restricted";                   # 認証時に表示されるメッセージ
+        auth_basic_user_file /etc/nginx/.htpasswd; # .htpasswdファイルのパス
+    }
+```
+
+locationは、全部に必要なのか要確認
+
+## nginxリバプロの設定
+
+```
+location /api {
+    proxy_pass http://localhost:10080;
+}
+location /graphql {
+    proxy_pass http://localhost:10080;
+}
+```
+
+## reactでrouteしているurlをリロードしたときにエラーにならないように
+
+```
+location / {
+    try_files $uri $uri/ /index.html
+}
+```
+
+と、最後に`/index.html`を返すように設定する
+
 #### EOF
 <!-- link -->
 [lets encrypt]: https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
