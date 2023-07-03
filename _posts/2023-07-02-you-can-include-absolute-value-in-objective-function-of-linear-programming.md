@@ -11,7 +11,7 @@ tags: math
 次のような最適化問題を考える。
 
 minimize <br>
-<span style="width: 3em; display:inline-block" />$$c'\boldsymbol{x} + |x_1|$$ <br>
+<span style="width: 3em; display:inline-block" />$$\boldsymbol{c}'\boldsymbol{x} + |x_1|$$ <br>
 subject to <br>
 <span style="width: 3em; display:inline-block" />$$A\boldsymbol{x} \ge 0$$
 
@@ -24,7 +24,7 @@ subject to <br>
 天下りであるが、上の問題の代わりに、以下のような問題を考える。これを解けば、上の問題の解が手に入るということを以下で説明する。
 
 minimize <br>
-<span style="width: 3em; display:inline-block" />$$c'\boldsymbol{x} + y + z$$ <br>
+<span style="width: 3em; display:inline-block" />$$\boldsymbol{c}'\boldsymbol{x} + y + z$$ <br>
 subject to <br>
 <span style="width: 3em; display:inline-block" />$$A\boldsymbol{x} \ge 0$$ <br>
 <span style="width: 3em; display:inline-block" />$$ x_1 = y - z $$ <br>
