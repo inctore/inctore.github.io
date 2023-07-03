@@ -11,11 +11,11 @@ tags: math
 次のような最適化問題を考える。
 
 minimize <br>
-<span style="width: 3em; display:inline-block" />$$\boldsymbol{c}'\boldsymbol{x} + |x_1|$$ <br>
+<span style="width: 3em; display:inline-block" /> $$\boldsymbol{c}'\boldsymbol{x} + |x_1|$$ <br>
 subject to <br>
-<span style="width: 3em; display:inline-block" />$$A\boldsymbol{x} \ge 0$$
+<span style="width: 3em; display:inline-block" /> $$A \boldsymbol{x} \ge 0$$
 
-ただし、 $$\boldsymbol{x} = (x_1, x_2, \ldots, x_n)$$ で、 $$\boldmath{c}, A$$ は適当なサイズのベクトルと行列とする。
+ただし、 $$\boldsymbol{x} = (x_1, x_2, \ldots, x_n)$$ で、 $$\boldsymbol{c}, A$$ は適当なサイズのベクトルと行列とする。
 
 目的関数に絶対値が入っており、一見LPでは解けないと思う・・が、実はLPで解けますよというのがこの稿の主題である。
 
