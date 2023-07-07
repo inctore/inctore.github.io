@@ -47,12 +47,15 @@ fixtureは、テストファイルの中に書いても良いが、複数のフ�
 `conftest.py`
 
 ```python
+from typing import Generator
 import pytest
 
+from flask import Flask
+from flask.testing import FlaskClient
 from some_package import server
 
 @pytest.fixture
-def app():
+def app() -> Generator[Flask, None, None]:
     app = server.app
     app.config.update({
         "TESTING": True
