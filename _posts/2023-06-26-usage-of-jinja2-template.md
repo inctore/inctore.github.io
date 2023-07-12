@@ -8,6 +8,8 @@ tags: python jinja
 
 たまに使うんだけど毎日使うというほどでもないので使い方を何回も調べている道具シリーズ。jinja2の使い方をメモしておく。
 
+<script src="https://gist.github.com/hotoku/6d13097503703b86414725980c959732.js"></script>
+
 jinja2の制御構文用の記号と、jekyllの記号がバッティングしていることが分かったので、画像貼り付けとう雑回避。
 
 コード(j2.py)
