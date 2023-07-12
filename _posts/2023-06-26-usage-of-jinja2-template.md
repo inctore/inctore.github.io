@@ -10,14 +10,4 @@ tags: python jinja
 
 <script src="https://gist.github.com/hotoku/6d13097503703b86414725980c959732.js"></script>
 
-jinja2の制御構文用の記号と、jekyllの記号がバッティングしていることが分かったので、画像貼り付けとう雑回避。
-
-コード(j2.py)
-
-![code](/assets/images/20230626-1.png)
-
-出力
-
-![output](/assets/images/20230626-2.png)
-
-`for`や`endfor`を囲むかっこに`-`を付けるか付けないかで、各イテレーションの前後の改行に関する挙動が変わる。
+jinja2の制御構文用の記号と、jekyllの記号がバッティングしていることが分かったので、gistで回避する。
