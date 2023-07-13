@@ -1,6 +1,6 @@
 ---
 title: 型チェック時だけコードを有効にする
-last_modified_at: 2023-07-13T08:49:47+09:00:00
+last_modified_at: 2023-07-13T09:49:47
 categories:
   - blog
 tags: python
