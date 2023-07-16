@@ -72,7 +72,7 @@ def deco(f: Callable[P, R]) -> Func[P, R]:
 
 @deco
 def func(x: int, y: int) -> int:
-    return x + y
+    return x * y
 
 func("a", "b") # 型チェッカがエラーを報告してくれる
 ```
