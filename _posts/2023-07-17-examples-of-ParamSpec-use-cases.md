@@ -6,7 +6,7 @@ categories:
 tags: python
 ---
 
-ParamSpecを使うと、デコレータを定義する際に、デコレートされる関数の引数の型情報を明示的に扱うことができる。
+ParamSpecを使うと、デコレータを定義する際に、デコレートされる関数の引数の型情報を明示的に扱うことができる([昨日のブログ](https://www.inctore.com/blog/keeping-type-information-of-arguments-in-decorator/))。
 ParamSpecを提案しているPEPでは、単純に型情報を保つだけではなく、引数の型に制約を導入するような例が挙げられている。
 
 例えば、以下のコードでは、`printall`に渡される関数には「最初の位置引数は`list`である」という制約が課されている。
