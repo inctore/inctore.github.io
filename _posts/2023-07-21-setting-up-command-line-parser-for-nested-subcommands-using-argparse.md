@@ -133,20 +133,20 @@ flowchart TD
     storage_actions:::SubParsersAction
 
 gcloud -->|add_subparsers| gcloud_actions
-    gcloud_actions -->|add_parsers| compute
-    gcloud_actions -->|add_parsers| storage
+    gcloud_actions -->|add_parser| compute
+    gcloud_actions -->|add_parser| storage
 
     compute -->|add_subparsers| compute_actions
-    compute_actions -->|add_parsers| instances
-    compute_actions -->|add_parsers| ssh
+    compute_actions -->|add_parser| instances
+    compute_actions -->|add_parser| ssh
 
     instances -->|add_subparsers| instances_actions
-    instances_actions -->|add_parsers| start
-    instances_actions -->|add_parsers| stop
+    instances_actions -->|add_parser| start
+    instances_actions -->|add_parser| stop
 
     storage -->|add_subparsers| storage_actions
-    storage_actions -->|add_parsers| ls
-    storage_actions -->|add_parsers| cp
+    storage_actions -->|add_parser| ls
+    storage_actions -->|add_parser| cp
 ```
 
 - <span style="background: #0C87F2; color:white">青い四角</span>が`ArgumentParser`オブジェクト
