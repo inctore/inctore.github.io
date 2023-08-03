@@ -24,6 +24,7 @@ def signal_handler(sig, _):
 
 def main():
     signal.signal(signal.SIGINT, signal_handler)
+    print("Ctrl-Cを3回押してください")
     while True:
         time.sleep(100)
 
