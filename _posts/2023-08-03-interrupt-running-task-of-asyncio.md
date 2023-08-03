@@ -107,7 +107,7 @@ $ python sample2.py
 
 1. `Event`オブジェクトを作成し、`Task`間で共有している: `runner`の引数に`event`が追加されている部分である。
 1. `SIGINT`で起動するハンドラを登録し、このハンドラの中で`Event`オブジェクトの中身を反転させる: この反転処理は、イベントループの中で実行されるようにコードが調整されている。ここは若干、複雑だが、本稿の主題ではないので説明は省略する。
-1. `Task`の中で、`Event.wait()`を`await`している: ここの部分に来たときに`Event`の中身が`False`の場合、`True`になるまで、この`Task`は待ち続けることになる
+1. `Task`の中で、`Event.wait()`を`await`している: ここの部分に来たときに`Event`の中身が`False`の場合、`True`になるまで`Task`の実行が中断されたままになる。
 
 <!-- link -->
 [前回]: https://www.inctore.com/blog/running-multiple-tasks-concurrently-using-asyncio/
