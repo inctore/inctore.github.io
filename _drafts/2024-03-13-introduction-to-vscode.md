@@ -43,7 +43,46 @@ VSCodeは、プロジェクトの内容を見て適当な拡張をレコメン�
 
 ### autopep8
 
-todo: 書く
+- 拡張: autopep8をインストール
+- 設定: `.vscode/settings.json`に以下を追加
+
+```json
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true
+  }
+}
+```
+
+## デバッグ
+
+デバッグ用に起動するプロセスを設定するには、`.vscode/launch.json`を作成する。Pythonの場合は、コマンドパレットで`debug using launch.json`を検索すると、必要な設定を作ってくれる。
+
+起動のパターンにいくつかの選択肢があり、モジュールを`-m`で起動する場合は、以下のような設定が自動で作成される。
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: Module",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "todree"
+    }
+  ]
+}
+```
+
+引数を追加したいときは、`.configurations.args`を追加する。コメントに書いてあるように、IntelliSenseがいい感じにやってくれる。
+
+F5でデバッグプロセスを起動、などはVisual Studioと同じ感じ。
+
+
 
 ## 知りたいこと
 
