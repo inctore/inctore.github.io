@@ -16,4 +16,4 @@ osascript -e 'do shell script "コマンド" with administrator privileges'
 
 [使用例](https://github.com/hotoku/auto-wg)
 
-このジョブでは、`wg-quick up wg0`というコマンド(VPNに接続するコマンド)をroot権限で実行している。
+👆の例では、`wg-quick up wg0`というコマンド(VPNに接続するコマンド)をroot権限で実行している。
