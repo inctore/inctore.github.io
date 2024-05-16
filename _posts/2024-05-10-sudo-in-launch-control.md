@@ -14,6 +14,4 @@ osascriptを使って、以下のようなコマンドを起動時に実行す�
 osascript -e 'do shell script "コマンド" with administrator privileges'
 ```
 
-[使用例](https://github.com/hotoku/auto-wg)
-
-👆の例では、`wg-quick up wg0`というコマンド(VPNに接続するコマンド)をroot権限で実行している。
+[使用例](https://github.com/hotoku/auto-wg) 👈 の例では、`wg-quick up wg0`というコマンド(VPNに接続するコマンド)をroot権限で実行している。
