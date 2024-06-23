@@ -55,6 +55,24 @@ VSCodeは、プロジェクトの内容を見て適当な拡張をレコメン�
 }
 ```
 
+### isort
+
+- 拡張: isortをインストール
+- 設定
+
+```json
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+  },
+  "isort.args":["--profile", "black"],
+```
+
+black-formatter意外のフォーマッタでも↑と同様で動作した。
+
 ## デバッグ
 
 デバッグ用に起動するプロセスを設定するには、`.vscode/launch.json`を作成する。Pythonの場合は、コマンドパレットで`debug using launch.json`を検索すると、必要な設定を作ってくれる。
@@ -81,8 +99,6 @@ VSCodeは、プロジェクトの内容を見て適当な拡張をレコメン�
 引数を追加したいときは、`.configurations.args`を追加する。コメントに書いてあるように、IntelliSenseがいい感じにやってくれる。
 
 F5でデバッグプロセスを起動、などはVisual Studioと同じ感じ。
-
-
 
 ## 知りたいこと
 
