@@ -18,3 +18,16 @@ sqlite> select * from other_db.some_table;
 ```
 
 [link](https://stackoverflow.com/questions/49660302/does-sqlite-have-the-concept-of-a-schema-in-naming-tables-views)
+
+自分は、pythonからsqliteを使うことが多いが、例えば以下のような関数を定義しておけば、便利である。
+
+```python
+import sqlite3
+
+def connect():
+    path1 = "/path/to/db1"
+    path2 = "/path/to/db2"
+    con = sqlite3.connect(path1)
+    con.execute(f"attach database '{path2}' as 'other'")
+    return con
+```
