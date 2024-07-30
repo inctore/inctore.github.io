@@ -1,9 +1,10 @@
 ---
-layout: post
 title: aws cliの認証
-date: 2024-07-26 16:29:09 +0900
-categories: blog
-tags: aws
+last_modified_at: 2024-07-31T08:40:41
+categories:
+  - blog
+tags:
+  - info
 ---
 
 awsをCLIから操作するには、その名も`aws`コマンドを用いる。
