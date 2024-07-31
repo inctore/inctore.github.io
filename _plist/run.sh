@@ -15,4 +15,4 @@ eval "$(anyenv init -)"
 
 
 ruby --version
-bundle exec jekyll serve --drafts --livereload --port 4001 --livereload-port 4002
+bundle exec jekyll serve --drafts --livereload --port 14001 --livereload-port 14002
