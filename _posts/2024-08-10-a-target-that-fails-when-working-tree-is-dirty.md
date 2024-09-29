@@ -8,7 +8,7 @@ tags: Makefile
 
 Makefileに以下のようなターゲットを定義しておくと、gitレポジトリのworking treeがdirtyのときに失敗する。
 
-```Makefile
+```make
 tree-clean:
 	@if [ $$(git status -s | wc -l) -ge 1 ]; then echo "Error: local tree is dirty."; false; fi
 ```
