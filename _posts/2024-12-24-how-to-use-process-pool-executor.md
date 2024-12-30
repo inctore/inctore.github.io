@@ -9,24 +9,38 @@ tags: python
 pythonのProcessPoolExecutorは、雑に並列処理を実装するのに大変便利である。使い方をメモっておく。
 
 ```python
-from concurrent.futures import ProcessPoolExecutor
+from concurrent import futures as cf
 
-def f(x):
+def f(x: int) -> int:
+    if x % 3 == 0:
+        raise ValueError("x is divisible by 3")
     return x * x
 
-def main():
-    with ProcessPoolExecutor() as executor:
-        futs = [executor.submit(f, i) for i in range(5)]
-    res = []
-    for fut in futs:
-        res.append(fut.result(timeout=1))
-    print(res)
+vals = list(range(10))
 
-if __name__ == "__main__":
-    main()
+with cf.ProcessPoolExecutor() as executor:
+    futures = [executor.submit(f, x) for x in vals]
+cf.wait(futures, return_when="ALL_COMPLETED")
+
+results = []
+errors = []
+
+for future in futures:
+    if future.exception():
+        errors.append(future.exception())
+    else:
+        results.append(future.result())
+
+print(results)
+print(errors)
+```
+
+出力：
+
+```
+[1, 4, 16, 25, 49, 64]
+[ValueError('x is divisible by 3'), ValueError('x is divisible by 3'), ValueError('x is divisible by 3'), ValueError('x is divisible by 3')]
 ```
 
 `executor.map`というメソッドもあって、これを使うと明示的に`Future`オブジェクトを扱わなくて済む。
-のだが、`map`だとなぜか固まることがある。何度か遭遇したが、原因が分かっていない。これもなぜか分からないが、上のように`Future`を介すると固まることが（今のところ）ないので、とりあえずこうしている。
-
-上のように書くと、`fut.result(timeout=1)`がsequentialに実行されると、たとえば全タスクが失敗した場合に、結局、待ち時間がタスク数に比例して伸びてしまう可能性があるように思う。気になるので、あとで実験する。
+のだが、`map`だとなぜか固まることがある。のと、実際のユースケースでは、例外を明示的に扱えた方がよいことがほとんどなので、こちらを利用している。
